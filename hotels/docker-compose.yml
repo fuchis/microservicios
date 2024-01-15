@@ -1,0 +1,36 @@
+services:
+  hotels:
+    image: fuchis/hotels:latest
+    mem_limit: 800m
+    ports:
+      - "8080:8080"
+    networks:
+      - fuchis-network
+
+  rooms:
+    image: fuchis/rooms:latest
+    mem_limit: 800m
+    ports:
+      - "8081:8081"
+    networks:
+      - fuchis-network
+
+  reservations:
+    image: fuchis/reservations:latest
+    mem_limit: 800m
+    ports:
+      - "8082:8082"
+    networks:
+      - fuchis-network
+
+  config-server:
+    image: fuchis/config-server
+    mem_limit: 800m
+    ports:
+      - "8085:8085"
+    networks:
+      - fuchis-network
+
+networks:
+  fuchis-network:
+
